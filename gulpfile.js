@@ -38,6 +38,7 @@ gulp.task('sass', function () {
             browsers: browser_support,
             cascade: false
         }))
+        .pipe($.minifyCss())
         .pipe(gulp.dest(path.css))
         .pipe($.size());
 
