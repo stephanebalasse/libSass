@@ -1,0 +1,8 @@
+$resolutions : (mobile-P: 0, mobile-L : 480px, small-P : 600px, small-L : 800px ,large-P : 768px, large-L : 1024px);
+
+$mobile-P : "only screen" !default;
+$mobile-L : "only screen and (min-width: 480px)" !default;
+$small-L : "only screen and (min-width: 600px)" !default;
+$small-P : "only screen and (min-width: 800px)" !default;
+$large-L : "only screen and (min-width: 768px)" !default;
+$large-P  : "only screen and (min-width: 1024px)" !default;
