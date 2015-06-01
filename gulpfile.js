@@ -4,8 +4,9 @@
 /* Configuration */
 
 var path = {
-    css : "css",
-    scss: "scss"
+    css: "css",
+    scss: "scss",
+    img: "img"
 };
 
 /* Support Navigateur */
@@ -48,4 +49,15 @@ gulp.task('default', function () {
 
     gulp.watch(path.scss + '/**/*.scss', ['sass']);
 
+});
+
+gulp.task('sprite', function () {
+    var spriteData = gulp.src(path.img + '/icons/*.png')
+        .pipe($.spritesmith({
+            imgName: 'sprite.png',
+            cssName: 'sprite.css'
+        }));
+
+    spriteData.img.pipe(gulp.dest(path.img));
+    spriteData.css.pipe($.minifyCss()).pipe(gulp.dest(path.img));
 });
