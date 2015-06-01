@@ -51,7 +51,15 @@ gulp.task('default', function () {
 
 });
 
-gulp.task('sprite', function () {
+gulp.task('copyNonRetina', function () {
+    var destination = path.img + "/icons";
+    gulp.src(path.img + "/icons/@2x/*.png")
+        .pipe($.imageResize({width: "50%", height: "50%", imageMagik: true}))
+        .pipe(gulp.dest(destination));
+
+});
+
+gulp.task('sprite', ['copyNonRetina'], function () {
     var spriteData = gulp.src(path.img + '/icons/*.png')
         .pipe($.spritesmith({
             imgName: 'sprite.png',
