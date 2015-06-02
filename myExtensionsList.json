@@ -4,8 +4,10 @@
     "io.brackets.color-palette": true,
     "mikailcolak.brackets-color-picker": true,
     "zaggino.brackets-git": true,
-    "jrowny.brackets.snippets": true,
+    "ivogabe.icons": true,
+    "hdy.brackets-shell": true,
     "edc.brackets-snippets": true,
+    "insya.tools": true,
     "demonmhon.brackets-working-file-tab": true,
     "brackets-add-comment": true,
     "brackets-code-folding": true,
@@ -15,9 +17,12 @@
     "adobe.brackets.extract": true,
     "y0nnyy.specialchars": true,
     "asi.ionic": true,
+    "gruehle.markdown-preview": true,
     "brackets-mustache-language": true,
     "pretty_json": true,
     "dnbard.projects": true,
-    "response-for-brackets": true
+    "enturn.quick-search": true,
+    "response-for-brackets": true,
+    "brackets-git-info": true
   }
 }

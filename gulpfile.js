@@ -46,13 +46,13 @@ gulp.task('sass', function () {
 });
 
 gulp.task('default', function () {
-
+    gulp.watch(path.img + '/icons/@2x/*.png', ['sprite']);
     gulp.watch(path.scss + '/**/*.scss', ['sass']);
 
 });
 
 gulp.task('copyNonRetina', function () {
-    var destination = path.img + "/icons";
+    var destination = path.img + "/icons/icones/";
     gulp.src(path.img + "/icons/@2x/*.png")
         .pipe($.imageResize({width: "50%", height: "50%", imageMagik: true}))
         .pipe(gulp.dest(destination));
@@ -60,7 +60,7 @@ gulp.task('copyNonRetina', function () {
 });
 
 gulp.task('sprite', ['copyNonRetina'], function () {
-    var spriteData = gulp.src(path.img + '/icons/*.png')
+    var spriteData = gulp.src(path.img + '/icons/icones/*.png')
         .pipe($.spritesmith({
             imgName: 'sprite.png',
             cssName: 'sprite.css'

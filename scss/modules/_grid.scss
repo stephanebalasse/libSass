@@ -1,19 +1,14 @@
 //-------------------------------------*\
 //   $VARIABLES
 //-------------------------------------*/
-
 $columns: 12 !default;
 $gutter: 20px !default;
 $medium: 640px !default;
 $large: 1024px !default;
-
 $resolutions : (small : 0, medium : 640px, large : 1024px) !default;
-
-
 //--------------------------------------*\
 //    $MIXINS
 //--------------------------------------*/
-
 @mixin responsive-columns($suff: ''){
     @for $i from 0 through $columns{
         @if $i != 0 {
@@ -22,22 +17,17 @@ $resolutions : (small : 0, medium : 640px, large : 1024px) !default;
         .col-#{$suff}-center {margin: 0 auto; float:none;}
         .col-#{$suff}-push-#{$i} { left : $i / $columns * 100% ;}
         .col-#{$suff}-pull-#{$i} { left : $i / $columns * 100% ;}
-
     }
 }
-
 //-------------------------------------*\
 //    $EXTENDS
 //-------------------------------------*/
-
 %col{
     float: left;
     position: relative;
     min-height:1px;
     padding: 0 $gutter * 0.5;
-
 }
-
 %clearfix{
     &:before,
     &:after {
@@ -51,22 +41,17 @@ $resolutions : (small : 0, medium : 640px, large : 1024px) !default;
       zoom:1; /* For IE 6/7 (trigger hasLayout) */
     }
 }
-
 /*-------------------------------------*\
     $CLASSE GÉNÉRIQUES
 \*-------------------------------------*/
-
 .row{
     margin: 0 $gutter * -0.5;
     @extend %clearfix;
 }
-
 .col-center{
     margin: 0 auto;
     float: none;
 }
-
-
 @each $suffix, $taille in $resolutions {
      @for $i from 1 through $columns{
         .col-#{$suffix}-#{$i} {
@@ -74,7 +59,6 @@ $resolutions : (small : 0, medium : 640px, large : 1024px) !default;
         }
     }
 }
-
 @each $suffix, $taille in $resolutions {
     @if $taille == 0 {
         @include responsive-columns($suffix);
