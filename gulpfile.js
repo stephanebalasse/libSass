@@ -11,17 +11,7 @@ var path = {
 
 /* Support Navigateur */
 
-var browser_support = [
-    "ie >= 9",
-    "ie_mob >= 10",
-    "ff >= 30",
-    "chrome >= 34",
-    "safari >= 7",
-    "opera >= 23",
-    "ios >= 7",
-    "android >= 4.4",
-    "bb >= 10"
-];
+var browser_support = ['Explorer> = 6', 'ExplorerMobile> = 10', 'Firefox> = 30', 'Chrome> = 30', 'Safari> = 7', 'Opera> = 23', 'iOS> = 7', 'Android 4.1', 'BlackBerry> = 10'];
 
 /* Require */
 
@@ -36,10 +26,8 @@ gulp.task('sass', function () {
     gulp.src(path.scss + '/**/*.scss')
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.autoprefixer({
-            browsers: browser_support,
-            cascade: false
+            browsers: ['Explorer> = 9', 'ExplorerMobile> = 10', 'Firefox> = 30', 'Chrome> = 30', 'Safari> = 7', 'Opera> = 23', 'iOS> = 7', 'Android 4.1', 'BlackBerry> = 10']
         }))
-        .pipe($.minifyCss())
         .pipe(gulp.dest(path.css))
         .pipe($.size());
 
@@ -54,7 +42,11 @@ gulp.task('default', function () {
 gulp.task('copyNonRetina', function () {
     var destination = path.img + "/icons/icones/";
     gulp.src(path.img + "/icons/@2x/*.png")
-        .pipe($.imageResize({width: "50%", height: "50%", imageMagik: true}))
+        .pipe($.imageResize({
+            width: "50%",
+            height: "50%",
+            imageMagik: true
+        }))
         .pipe(gulp.dest(destination));
 
 });
