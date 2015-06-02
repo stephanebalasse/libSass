@@ -37,6 +37,7 @@ gulp.task('sass', function () {
 gulp.task('default', function () {
     gulp.watch(path.img + '/icons/@2x/*.png', ['sprite']);
     gulp.watch(path.scss + '/**/*.scss', ['sass']);
+    gulp.watch(path.img + '/icons/**/*.scss', ['sass']);
 
 });
 

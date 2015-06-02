@@ -785,16 +785,3 @@ hr.style-two {
   height: 1px;
   background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
   background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent); }
-
-div {
-  -webkit-transform: rotate(7deg);
-  -ms-transform: rotate(7deg);
-  transform: rotate(7deg);
-  width: 300px;
-  height: 100px;
-  border: 1px solid blue;
-  box-sizing: border-box;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
