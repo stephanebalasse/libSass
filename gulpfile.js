@@ -11,7 +11,7 @@ var path = {
 
 /* Support Navigateur */
 
-var browser_support = ['Explorer> = 6', 'ExplorerMobile> = 10', 'Firefox> = 30', 'Chrome> = 30', 'Safari> = 7', 'Opera> = 23', 'iOS> = 7', 'Android 4.1', 'BlackBerry> = 10'];
+var browser_support = ["Explorer >= 8", "ExplorerMobile >= 11", "Firefox >= 31", "Chrome >= 31", "Safari >= 7", "Opera >= 23", "iOS >= 7.1", "Android 4.1", "BlackBerry >= 10"];
 
 /* Require */
 
@@ -26,7 +26,8 @@ gulp.task('sass', function () {
     gulp.src(path.scss + '/**/*.scss')
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.autoprefixer({
-            browsers: ['Explorer> = 9', 'ExplorerMobile> = 10', 'Firefox> = 30', 'Chrome> = 30', 'Safari> = 7', 'Opera> = 23', 'iOS> = 7', 'Android 4.1', 'BlackBerry> = 10']
+            browsers: browser_support,
+            cascade: false
         }))
         .pipe(gulp.dest(path.css))
         .pipe($.size());
